@@ -8,32 +8,33 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Saisi des coordonnées du point
-        Point2D point = new Point2D();
+        Point3D point = new Point3D();
         System.out.println("Saisir la coordonnée X sur l'axe des abscisses: ");
-        int x = scanner.nextInt();
-        point.setX(x);
+        point.setX(scanner.nextInt());
         System.out.println("Saisir la coordonnée Y sur l'axe des ordonnées: ");
-        int y = scanner.nextInt();
-        point.setY(y);
+        point.setY(scanner.nextInt());
+        System.out.println("Saisir la coordonnée Z sur l'axe des cotes: ");
+        point.setZ(scanner.nextInt());
 
         // Affichage du point saisi
         System.out.print("Le point: ");
         point.afficher();
 
         // Saisi du point de translation
-        Point2D pointDeTranslation = new Point2D(x,y);
-        System.out.println("Saisir le point de translation de coordonnée dX et dY: ");
-        int dX = scanner.nextInt();
-        int dY = scanner.nextInt();
+        Point3D pointDeTranslation = new Point3D(point.getX(), point.getY(), point.getZ());
+        System.out.println("Saisir le point de translation de coordonnée dX et dY et dZ: ");
+        pointDeTranslation.setX(scanner.nextInt());
+        pointDeTranslation.setY(scanner.nextInt());
+        pointDeTranslation.setZ(scanner.nextInt());
 
         // Translation et affichage
-        point.translater(dX,dY);
+        point.translater(pointDeTranslation.getX(), pointDeTranslation.getY(), pointDeTranslation.getZ());
         System.out.print("Le point après translation: ");
         point.afficher();
 
 
         // Affichage du compteur
-        Point2D.getCompteur();
+        Point3D.getCompteur();
 
 
     }

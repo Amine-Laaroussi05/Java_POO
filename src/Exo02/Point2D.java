@@ -2,6 +2,14 @@ package Exo02;
 
 
 public class Point2D {
+
+
+
+    // attributes
+    /**
+     * @param x : int
+     * @param y : int
+     */
     private static int compteur =0;
     private int x;
     private int y;
@@ -53,17 +61,18 @@ public class Point2D {
     // Methods
 
     public void afficher(){
-        System.out.println("[" + this.x + "," + this.y + "]");
+        System.out.println("[" + getX() + "," + getY() + "]");
     } // affiche le point
 
     public void translater(int x, int y){ // translate le point
-        this.x += x;
-        this.y += y;
+        this.setX(getX() + x);
+        this.setY(getY() + y);
     }
 
     public static void getCompteur(){ // affiche le compteur
         System.out.println("La valeur du compteur est: " + compteur);
     }
+
 
 
 }
