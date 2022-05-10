@@ -8,22 +8,22 @@ public class Compte {
      * @param solde : double
      */
 
-    private int num;
+    private int numero;
     private double solde;
 
 
     //Getters & Setters
-    public int getNum() {
-        return this.num;
+    public int getNumero() {
+        return this.numero;
     }
 
     public double getSolde() {
         return this.solde;
     }
 
-    public void setNum(int num) {
-        this.num = num;
-    }
+    /*public void setNumero(int numero) {
+        this.numero = numero;
+    }*/
 
     public void setSolde(double solde) {
         this.solde = solde;
@@ -32,14 +32,14 @@ public class Compte {
 
     //Constructors
     public Compte(int numero, double solde){
-        this.setNum(numero);
+        this.numero = numero;
         this.setSolde(solde);
     }
 
 
     //Methods
     public void afficher(){
-        System.out.println("Numéro de compte: " + getNum());
+        System.out.println("Numéro de compte: " + getNumero());
         System.out.println("Solde: " + getSolde());
     }
 

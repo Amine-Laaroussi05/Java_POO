@@ -1,5 +1,6 @@
 package Exo06;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
@@ -11,14 +12,14 @@ public class Client {
      * @param prenom : String
      * @param age : int
      * @param numero : int
-     * @param comptes : Compte[]
+     * @param comptes : List<Compte>
      */
 
     private String nom;
     private String prenom;
     private int age;
     private int numero;
-    private List<Compte> comptes;
+    private List<Compte> comptes = new ArrayList<>();
 
 
 
@@ -44,7 +45,10 @@ public class Client {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age < 0) {
+            this.age = age;
+        }
+        else System.out.println("Age invalide.");
     }
 
     public int getNumero() {
@@ -55,7 +59,7 @@ public class Client {
         this.numero = numero;
     }
 
-    public List<Compte> getComptes() {
+    public final List<Compte> getComptes() {
         return this.comptes;
     }
 
@@ -66,12 +70,11 @@ public class Client {
 
 
     //Constructors
-    public Client(String nom, String prenom, int age, int numero, List<Compte> comptes) {
+    public Client(String nom, String prenom, int age, int numero) {
         this.setNom(nom);
         this.setPrenom(prenom);
         this.setAge(age);
         this.setNumero(numero);
-        this.setComptes(comptes);
     }
 
 
@@ -80,12 +83,17 @@ public class Client {
         System.out.println("Nom: " + getNom() + ", Prenom: " + getPrenom() + ", Age: " + getAge() + ", Numéro client: " + getNumero());
     }
 
-    public void ajouterCompte(Compte compte){
+    public void ajouterCompte(Compte compte){ // Ajoute un compte à la liste
         getComptes().add(compte);
     }
 
-    /*public Compte getCompte(int numero){
-        getComptes().
-    }*/
-
+    public Compte getCompte(int numero) { //Retourne le compte avec le numéro saisi
+        for (int index = 0; index < getComptes().size(); index++) {
+            if(getComptes().get(index).getNumero() == numero){
+                return getComptes().get(index);
+            }
+        }
+        System.out.println("Le numéro saisi n'existe pas.");
+        return null;
+    }
 }

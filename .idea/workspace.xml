@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a021f23-e655-4e05-84f5-ac46d18d8618" name="Changes" comment="Java exercices : les classes">
-      <change afterPath="$PROJECT_DIR$/src/Exo02/Point3D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exo06/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exo06/Compte.java" afterDir="false" />
+    <list default="true" id="1a021f23-e655-4e05-84f5-ac46d18d8618" name="Changes" comment="Java exercices : Point2D et Point3D (héritage)">
+      <change afterPath="$PROJECT_DIR$/src/Exo06/CompteASeuil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo06/CompteRemunere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo06/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo02/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Exo02/Point2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo02/Point2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exo02/Point3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo02/Point3D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exo06/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo06/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exo06/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo06/Compte.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,20 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Exo06.Main">
+    <configuration name="Exo06.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Exo06.Main" />
+      <module name="Java_POO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Exo06.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Exo02.Main" />
       <module name="Java_POO" />
@@ -58,6 +73,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Exo06.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -78,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652115382625</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Java exercices : Point2D et Point3D (héritage)">
+      <created>1652184990883</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652184990883</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Java exercices : les classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Java exercices : les classes" />
+    <MESSAGE value="Java exercices : Point2D et Point3D (héritage)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java exercices : Point2D et Point3D (héritage)" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package Exo02;
 
+import java.util.Objects;
+
 public class Point3D extends Point2D{
 
     /**
@@ -51,6 +53,26 @@ public class Point3D extends Point2D{
     }
 
 
+    public int hashCode(){
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + Objects.hash(z);
+        return result;
+    }
+
+    /*public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        }
+        if (!super.equals(obj)){
+            return false;
+        }
+        if (!(obj instanceof Point3D)){
+            return false;
+        }
+        Point3D other = (Point3D) obj;
+        return Objects.equals(z,)
+    }*/
 
 
 

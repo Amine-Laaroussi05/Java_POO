@@ -1,6 +1,8 @@
 package Exo02;
 
 
+import java.util.Objects;
+
 public class Point2D {
 
 
@@ -72,6 +74,9 @@ public class Point2D {
     public static void getCompteur(){ // affiche le compteur
         System.out.println("La valeur du compteur est: " + compteur);
     }
+
+
+
 
 
 
