@@ -68,7 +68,7 @@ public class Main {
         //Verser les intêrets sur les comptes rémunérés
         System.out.println("Versement des intêrets ...");
         for (Compte compteVar: client.getComptes()) {
-            if(compteVar.getClass() == CompteRemunere.class) ((CompteRemunere) compteVar).verserinterets();
+            if(compteVar.getClass() == CompteRemunere.class) ((CompteRemunere) compteVar).verserInterets();
         }
         System.out.println("---------------------------------");
 
@@ -79,5 +79,69 @@ public class Main {
         numero = scanner.nextInt();
         compte = client.getCompte(numero);
         compte.afficher();
+        System.out.println("---------------------------------");
+
+
+
+        //Ajout d'un CompteASeuilRemunere
+        System.out.println("Saisir le solde du nouveau compte à seuil et rémunéré: ");
+        solde = scanner.nextDouble();
+        System.out.println("Saisir le taux: ");
+        taux = scanner.nextDouble();
+        System.out.println("Saisir le seuil: ");
+        seuil = scanner.nextDouble();
+        ICompteRemunere compteRem = new CompteASeuilRemunere(3,solde,taux, seuil);
+        client.ajouterCompte((Compte) compteRem);
+        System.out.println("---------------------------------");
+
+
+
+        //Afficher le compte à seuil rémnunéré
+        ((CompteASeuilRemunere) compteRem).afficher();
+        System.out.println("Seuil: " + ((CompteASeuilRemunere) compteRem).getSeuil());
+        System.out.println("---------------------------------");
+
+
+
+        //Verser des intêrets sur le compte à seuil rémunéré
+        System.out.println("Versement des intêrets ...");
+        compteRem.verserInterets();
+        System.out.println("---------------------------------");
+
+
+        //Afficher le solde après versement
+        System.out.println("Votre compte après versement: ");
+        ((CompteASeuilRemunere) compteRem).afficher();
+        System.out.println("Seuil: " + ((CompteASeuilRemunere) compteRem).getSeuil());
+        System.out.println("---------------------------------");
+
+
+
+        //Retrait solde
+        System.out.println("Saisir le montant souhaitant être retiré: ");
+        double montant = scanner.nextDouble();
+        if(((CompteASeuilRemunere) compteRem).getSolde() - montant > ((CompteASeuilRemunere) compteRem).getSeuil()){
+            System.out.println("Retrait du montant " + montant + " euros de votre solde en cours...");
+            ((CompteASeuilRemunere) compteRem).retirer(montant);
+        } else{
+            throw new IllegalArgumentException("Le montant saisi est supérieur au montant autorisé sur votre compte à seuil. Retrait impossible.");
+        }
+        System.out.println("---------------------------------");
+
+
+
+        //Afficher le solde après retrait
+        System.out.println("Votre compte après retrait: ");
+        ((CompteASeuilRemunere) compteRem).afficher();
+        System.out.println("Seuil: " + ((CompteASeuilRemunere) compteRem).getSeuil());
+        System.out.println("---------------------------------");
+
+
+
+
+
+
+
+
     }
 }

@@ -1,6 +1,6 @@
 package Exo06;
 
-public class CompteRemunere extends Compte{
+public class CompteRemunere extends Compte implements ICompteRemunere{
 
     //Attributes
     /**
@@ -16,8 +16,10 @@ public class CompteRemunere extends Compte{
     }
 
     public void setTaux(double taux) {
-        if(taux >= 0 && taux <= 1)  this.taux = taux;
-        else System.out.println("Taux incorrect");
+        if(taux >= 0 && taux < 1)  this.taux = taux;
+        else {
+            throw new IllegalArgumentException("Le taux doit être entre 0 et 1.");
+        }
     }
 
 
@@ -38,11 +40,11 @@ public class CompteRemunere extends Compte{
     }
 
     public double calculerInterets(){
-        return getTaux() * getSolde();
+        return this.getTaux() * super.getSolde();
     }
 
-    public void verserinterets(){
-        ajouter(calculerInterets());
+    public void verserInterets(){
+        super.ajouter(calculerInterets());
     }
 
 

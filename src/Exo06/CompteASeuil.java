@@ -1,6 +1,6 @@
 package Exo06;
 
-public class CompteASeuil extends Compte{
+public class CompteASeuil extends Compte implements ICompteASeuil{
 
     //Attributes
     /**
@@ -39,7 +39,7 @@ public class CompteASeuil extends Compte{
     public void retirer(double valeur){
         if(getSolde()-valeur > getSeuil()){
             System.out.println("Vous venez de retirer le montant " + valeur + " de votre solde.");
-            setSolde(getSolde()-valeur);
+            super.retirer(valeur);
             System.out.println("Votre solde après retrait est de: " + getSolde());
         }
         else System.out.println("Votre seuil est supérieur au montant saisi. Retrait impossible.");
