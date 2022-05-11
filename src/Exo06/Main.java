@@ -50,8 +50,34 @@ public class Main {
 
 
         //Ajout d'un taux
-        System.out.println("Saisir un taux pour le compté rémunéré: ");
+        System.out.println("Saisir un taux pour le compte rémunéré: ");
         double taux = scanner.nextDouble();
-        Compte compterem = new CompteRemunere(client.getCompte(1).getNumero(), client.getCompte(2).getSolde(), taux);
+        client.getComptes().set(0,new CompteRemunere(client.getCompte(1).getNumero(), client.getCompte(1).getSolde(), taux));
+        System.out.println("---------------------------------");
+
+
+
+        //Ajout d'un seuil
+        System.out.println("Saisir un seuil pour le compte à seuil: ");
+        double seuil = scanner.nextDouble();
+        client.getComptes().set(1,new CompteASeuil(client.getCompte(2).getNumero(), client.getCompte(2).getSolde(), seuil));
+        System.out.println("---------------------------------");
+
+
+
+        //Verser les intêrets sur les comptes rémunérés
+        System.out.println("Versement des intêrets ...");
+        for (Compte compteVar: client.getComptes()) {
+            if(compteVar.getClass() == CompteRemunere.class) ((CompteRemunere) compteVar).verserinterets();
+        }
+        System.out.println("---------------------------------");
+
+
+
+        //Afficher le compte
+        System.out.println("Saisir votre numéro de compte: ");
+        numero = scanner.nextInt();
+        compte = client.getCompte(numero);
+        compte.afficher();
     }
 }

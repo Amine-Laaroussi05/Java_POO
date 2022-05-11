@@ -8,7 +8,7 @@ public class Compte {
      * @param solde : double
      */
 
-    private int numero;
+    private final int numero;
     private double solde;
 
 
@@ -21,9 +21,6 @@ public class Compte {
         return this.solde;
     }
 
-    /*public void setNumero(int numero) {
-        this.numero = numero;
-    }*/
 
     public void setSolde(double solde) {
         this.solde = solde;
