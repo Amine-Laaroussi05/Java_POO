@@ -117,12 +117,17 @@ public class Main {
 
 
 
+        // if: solde - montant > seuil
         //Retrait solde
         System.out.println("Saisir le montant souhaitant être retiré: ");
         double montant = scanner.nextDouble();
         if(((CompteASeuilRemunere) compteRem).getSolde() - montant > ((CompteASeuilRemunere) compteRem).getSeuil()){
             System.out.println("Retrait du montant " + montant + " euros de votre solde en cours...");
-            ((CompteASeuilRemunere) compteRem).retirer(montant);
+            try {
+                ((CompteASeuilRemunere) compteRem).retirer(montant);
+            } catch (BanqueException e) {
+                throw new RuntimeException(e);
+            }
         } else{
             throw new IllegalArgumentException("Le montant saisi est supérieur au montant autorisé sur votre compte à seuil. Retrait impossible.");
         }

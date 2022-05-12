@@ -1,13 +1,12 @@
 package Exo06;
 
-public class Compte {
+public class Compte extends BanqueException{
 
     //Attributes
     /**
      * @param numero : int
      * @param solde : double
      */
-
     private final int numero;
     private double solde;
 
@@ -44,8 +43,13 @@ public class Compte {
         this.setSolde(getSolde() + montant);
     }
 
-    public void retirer(double montant){
-        this.setSolde(getSolde() - montant);
+    public void retirer(double montant) throws BanqueException{
+        if(getSolde() >= montant){
+            this.setSolde(getSolde() - montant);
+        } else{
+            throw new BanqueException("Le montant saisi est supérieur au montant présent dans votre solde. Retrait impossible");
+        }
+
     }
 
 

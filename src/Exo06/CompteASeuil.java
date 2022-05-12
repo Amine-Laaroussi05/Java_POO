@@ -36,12 +36,14 @@ public class CompteASeuil extends Compte implements ICompteASeuil{
         System.out.println("Seuil: " + getSeuil());
     }
 
-    public void retirer(double valeur){
+    public void retirer(double valeur) throws BanqueException{
         if(getSolde()-valeur > getSeuil()){
-            System.out.println("Vous venez de retirer le montant " + valeur + " de votre solde.");
+            System.out.println("Vous venez de retirer le montant de " + valeur + " euros de votre solde.");
             super.retirer(valeur);
             System.out.println("Votre solde après retrait est de: " + getSolde());
         }
-        else System.out.println("Votre seuil est supérieur au montant saisi. Retrait impossible.");
+        else {
+            throw new BanqueException("Votre seuil est supérieur au montant saisi. Retrait impossible.");
+        }
     }
 }
