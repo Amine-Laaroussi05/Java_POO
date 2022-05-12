@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a021f23-e655-4e05-84f5-ac46d18d8618" name="Changes" comment="Java POO: exercice 8 -interfaces-">
-      <change afterPath="$PROJECT_DIR$/src/Exo06/BanqueException.java" afterDir="false" />
+    <list default="true" id="1a021f23-e655-4e05-84f5-ac46d18d8618" name="Changes" comment="Java POO: exercice 9 -exceptions-">
+      <change afterPath="$PROJECT_DIR$/src/Exo10/BanqueException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/Compte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/CompteASeuil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/CompteASeuilRemunere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/CompteRemunere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/ICompteASeuil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/ICompteRemunere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exo10/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo06/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo06/Compte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo06/CompteASeuil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo06/CompteASeuil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo06/ICompteASeuil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo06/ICompteASeuil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo06/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo06/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Exo06/BanqueException.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/Client.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/Compte.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/CompteASeuil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/CompteASeuilRemunere.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/CompteRemunere.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/ICompteASeuil.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/ICompteRemunere.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Exo06/Main.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -37,26 +52,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/amine/Documents/dev/Languages/Java/Java_POO/src/Exo10"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Exo10" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Exo06" />
       <recent name="Exo08" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Exo06.Main">
+  <component name="RunManager" selected="Application.Exo10.Main">
     <configuration name="Exo06.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Exo06.Main" />
       <module name="Java_POO" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Exo08.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Exo10.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Exo10.Main" />
+      <module name="Java_POO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Exo10.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -79,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Exo10.Main" />
         <item itemvalue="Application.Exo06.Main" />
         <item itemvalue="Application.Main" />
       </list>
@@ -128,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652285359547</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Java POO: exercice 9 -exceptions-">
+      <created>1652356523691</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652356523691</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +188,7 @@
     <MESSAGE value="Java exercices : banque" />
     <MESSAGE value="Java POO: exercice 7 (banque)" />
     <MESSAGE value="Java POO: exercice 8 -interfaces-" />
-    <option name="LAST_COMMIT_MESSAGE" value="Java POO: exercice 8 -interfaces-" />
+    <MESSAGE value="Java POO: exercice 9 -exceptions-" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java POO: exercice 9 -exceptions-" />
   </component>
 </project>
