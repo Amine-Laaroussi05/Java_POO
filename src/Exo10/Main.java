@@ -44,7 +44,12 @@ public class Main {
         //Vérifie compte client
         System.out.println("Saisir votre numero de compte: ");
         numero = scanner.nextInt();
-        compte = client.getCompte(numero);
+        try {
+            compte = client.getCompte(numero);
+        } catch (Exo06.BanqueException e) {
+            throw new RuntimeException(e);
+        }
+
         if (compte != null) {
             System.out.println("Votre compte numero " + compte.getNumero() + " contient " + compte.getSolde() + " euros.");
         }
@@ -54,8 +59,9 @@ public class Main {
         //Ajout d'un taux
         System.out.println("Saisir un taux pour le compte rémunéré: ");
         double taux = scanner.nextDouble();
-        client.getComptes().set(0,new CompteRemunere(client.getCompte(1).getNumero(), client.getCompte(1).getSolde(), taux));
-        //client.getComptes().compute(client.getCompte(1).getNumero(), )
+        List<Compte> copyList = client.getComptes();
+        copyList.set(0,new CompteRemunere(client.getComptes().get(0).getNumero(), client.getComptes().get(0).getSolde(), taux));
+        client.setComptes(copyList);
         System.out.println("---------------------------------");
 
 
@@ -63,15 +69,17 @@ public class Main {
         //Ajout d'un seuil
         System.out.println("Saisir un seuil pour le compte à seuil: ");
         double seuil = scanner.nextDouble();
-        client.getComptes().set(1,new CompteASeuil(client.getCompte(2).getNumero(), client.getCompte(2).getSolde(), seuil));
+        copyList = client.getComptes();
+        copyList.set(1,new CompteASeuil(client.getComptes().get(1).getNumero(), client.getComptes().get(1).getSolde(), seuil));
+        client.setComptes(copyList);
         System.out.println("---------------------------------");
 
 
 
         //Verser les intêrets sur les comptes rémunérés
         System.out.println("Versement des intêrets ...");
-        for (Compte compteVar: client.getComptes()) {
-            if(compteVar.getClass() == CompteRemunere.class) ((CompteRemunere) compteVar).verserInterets();
+        for (Compte compteBrowse: client.getComptes()) {
+            if(compteBrowse.getClass() == CompteRemunere.class) ((CompteRemunere) compteBrowse).verserInterets();
         }
         System.out.println("---------------------------------");
 
@@ -80,7 +88,12 @@ public class Main {
         //Afficher le compte
         System.out.println("Saisir votre numéro de compte: ");
         numero = scanner.nextInt();
-        compte = client.getCompte(numero);
+        try {
+            compte = client.getCompte(numero);
+        } catch (Exo06.BanqueException e) {
+            throw new RuntimeException(e);
+        }
+
         compte.afficher();
         System.out.println("---------------------------------");
 
@@ -94,19 +107,9 @@ public class Main {
         System.out.println("Saisir le seuil: ");
         seuil = scanner.nextDouble();
         ICompteRemunere compteRem = new CompteASeuilRemunere(3,solde,taux, seuil);
-        System.out.println("*************************************");
 
 
 
-        //Partie test
-        Compte compteTest = (Compte) compteRem;
-        List<Compte> compteListTest = new ArrayList<>();
-        compteListTest.add(compteTest);
-        client.setComptes(compteListTest);
-        client.getCompte(0).afficher();
-        System.out.println("**********************************");
-        client.ajouterCompte((Compte) compteRem);
-        System.out.println("---------------------------------");
 
 
 

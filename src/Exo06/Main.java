@@ -1,5 +1,6 @@
 package Exo06;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -52,7 +53,9 @@ public class Main {
         //Ajout d'un taux
         System.out.println("Saisir un taux pour le compte rémunéré: ");
         double taux = scanner.nextDouble();
-        client.getComptes().set(0,new CompteRemunere(client.getCompte(1).getNumero(), client.getCompte(1).getSolde(), taux));
+        List<Compte> copyList = client.getComptes();
+        copyList.set(0,new CompteRemunere(client.getComptes().get(0).getNumero(), client.getComptes().get(0).getSolde(), taux));
+        client.setComptes(copyList);
         System.out.println("---------------------------------");
 
 
@@ -60,7 +63,9 @@ public class Main {
         //Ajout d'un seuil
         System.out.println("Saisir un seuil pour le compte à seuil: ");
         double seuil = scanner.nextDouble();
-        client.getComptes().set(1,new CompteASeuil(client.getCompte(2).getNumero(), client.getCompte(2).getSolde(), seuil));
+        copyList = client.getComptes();
+        copyList.set(1,new CompteASeuil(client.getComptes().get(1).getNumero(), client.getComptes().get(1).getSolde(), taux));
+        client.setComptes(copyList);
         System.out.println("---------------------------------");
 
 

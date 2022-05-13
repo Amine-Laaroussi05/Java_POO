@@ -1,9 +1,8 @@
 package Exo10;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
+import Exo06.BanqueException;
+
+import java.util.*;
 import java.util.function.BiFunction;
 
 public class Client {
@@ -22,7 +21,9 @@ public class Client {
     private String prenom;
     private int age;
     private int numero;
-    private Map<Integer, Compte> comptes = new Hashtable<>();
+    private Map<Integer, Compte> compteMap = new Hashtable<>();
+
+
 
 
 
@@ -63,15 +64,18 @@ public class Client {
     }
 
     public final List<Compte> getComptes() {
-        return new ArrayList<>(this.comptes.values());
+        return new ArrayList<>(this.compteMap.values());
     }
 
+
     public void setComptes(List<Compte> comptes) {
-        int index = 0;
-        for(int t: this.comptes.keySet()){
-            this.comptes.compute(t, (key,val) -> comptes.get(t-1));
+        Collections.reverse(comptes);
+        for(int index = 0; index < comptes.size(); index++){
+            this.compteMap.put(index, comptes.get(index));
         }
     }
+
+
 
 
 
@@ -90,11 +94,17 @@ public class Client {
     }
 
     public void ajouterCompte(Compte compte){ // Ajoute un compte à la liste
-        getComptes().add(compte);
+        List<Compte> addCompte = getComptes();
+        addCompte.add(compte);
+        setComptes(addCompte);
     }
 
-    public Compte getCompte(int numero) { //Retourne le compte avec le numéro saisi
-        System.out.println("Test");
-        return getComptes().get(numero);
+    public Compte getCompte(int numero) throws BanqueException{ //Retourne le compte avec le numéro saisi
+        for(Compte compteBrowse: this.getComptes()){
+            if(compteBrowse.getNumero() == numero){
+                return compteBrowse;
+            }
+        }
+        throw new BanqueException("Le numéro saisi n'existe pas.");
     }
 }
