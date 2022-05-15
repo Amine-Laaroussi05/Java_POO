@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a021f23-e655-4e05-84f5-ac46d18d8618" name="Changes" comment="Java POO: exercice 10 -HashTable- (non fini)">
-      <change afterPath="$PROJECT_DIR$/src/SimpleTest_MaptoList_Class/ArrayTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SimpleTest_MaptoList_Class/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rectangle/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rectangle/Rectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo06/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo06/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo10/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo10/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo10/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo10/Compte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exo10/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exo10/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,12 +57,15 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Exo10" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Exo06" />
       <recent name="Exo08" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Exo10.Main">
+  <component name="RunManager" selected="Application.Rectangle.Main">
     <configuration name="Exo06.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Exo06.Main" />
       <module name="Java_POO" />
@@ -106,6 +105,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Rectangle.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Rectangle.Main" />
+      <module name="Java_POO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Rectangle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SimpleTest_MaptoList_Class.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SimpleTest_MaptoList_Class.Main" />
       <module name="Java_POO" />
@@ -121,6 +133,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Rectangle.Main" />
         <item itemvalue="Application.Exo10.Main" />
         <item itemvalue="Application.Exo06.Main" />
         <item itemvalue="Application.SimpleTest_MaptoList_Class.Main" />
